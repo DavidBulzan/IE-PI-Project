@@ -27,14 +27,14 @@ body {
 
 .review-input {
   width: 100%;
-  max-width: 600px; /* You can change this value to control the max width */
+  max-width: 600px; 
   padding: 10px;
   font-size: 16px;
   border: 2px solid #6c757d;
   border-radius: 5px;
   margin-bottom: 15px;
-  height: 150px; /* Adjust the height to make the textarea bigger */
-  resize: vertical; /* Allow resizing vertically (optional) */
+  height: 150px; 
+  resize: vertical; 
 }
 
 .review-form {
@@ -69,13 +69,13 @@ body {
   color: gold;
 }
 
-/* Hover effect - glow effect for all stars up to the hovered one */
+
 .star:hover,
 .star.hovered {
   color: gold;
 }
 
-/* Add a smooth transition when hovering */
+
 .star {
   transition: color 0.4s;
 }
