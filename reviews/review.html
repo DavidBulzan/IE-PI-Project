@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="review.css" />
+    <title>Review</title>
+  </head>
+  <body>
+    <div class="header-container">
+      <div id="snackbar">Mulțumim pentru recenzia ta</div>
+      <div class="header">
+        <h1>Lasă-ne un review</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <form class="review-form">
+        <label for="rating">Recenzia ta:</label>
+        <div id="rating" class="rating-container">
+          <!-- Stars inserted here by JavaScript -->
+        </div>
+        <div class="review-textarea-container">
+          <textarea
+            class="review-input"
+            placeholder="Sctrie recenzia ta aici..."
+            required
+          ></textarea>
+        </div>
+        <button id="submitReview" class="btn-primary" disabled>
+          Trimite recenzia
+        </button>
+      </form>
+    </div>
+
+    <script src="review.js"></script>
+  </body>
+</html>

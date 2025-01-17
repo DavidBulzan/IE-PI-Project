@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./donatii.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>Donatii</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        padding: 20px;
+      }
+      .container {
+        max-width: 800px;
+      }
+      .header-container {
+        max-width: 800px;
+        margin: 0 auto 20px;
+      }
+      .header {
+        text-align: center;
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .section-container {
+        margin-bottom: 15px;
+        padding: 15px;
+        background-color: #e9ecef;
+        border-radius: 8px;
+      }
+      .flex-container {
+        display: flex;
+        gap: 15px;
+
+        justify-content: center;
+      }
+      .flex-container div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .btn-check {
+        display: none;
+      }
+      .btn {
+        border: 2px solid #6c757d;
+        color: #6c757d;
+        font-weight: 600;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: white;
+        text-align: center;
+      }
+      .btn:hover {
+        background-color: #6c757d;
+        color: white;
+      }
+      .btn-check:checked + .btn {
+        background-color: #6c757d;
+        color: white;
+      }
+      .custom-input {
+        padding: 10px;
+        border: 2px solid #6c757d;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #6c757d;
+        font-weight: 600;
+        background-color: white;
+        text-align: center;
+      }
+      .btn-primary-enabled {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+      }
+      .btn-primary-enabled:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <div id="snackbar">Mulțumim pentru donația ta</div>
+      <div class="header">
+        <h1>Donații</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <form class="donation-form">
+        <!-- Currency select -->
+        <div class="section-container">
+          <label>ALEGE MONEDA</label>
+          <div class="flex-container">
+            <div>
+              <input
+                type="radio"
+                class="btn-check"
+                name="currency"
+                id="currencyRON"
+              />
+              <label class="btn" for="currencyRON">RON</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                class="btn-check"
+                name="currency"
+                id="currencyUSD"
+              />
+              <label class="btn" for="currencyUSD">USD</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                class="btn-check"
+                name="currency"
+                id="currencyEUR"
+              />
+              <label class="btn" for="currencyEUR">EUR</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amount select -->
+        <div class="section-container">
+          <label>ALEGE SUMA</label>
+          <div class="flex-container">
+            <div>
+              <input
+                type="radio"
+                class="btn-check"
+                name="amount"
+                id="amount100"
+                value="100"
+              />
+              <label class="btn" for="amount100">100</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                class="btn-check"
+                name="amount"
+                id="amount500"
+                value="500"
+              />
+              <label class="btn" for="amount500">500</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                class="btn-check"
+                name="amount"
+                id="amount1000"
+                value="1000"
+              />
+              <label class="btn" for="amount1000">1000</label>
+            </div>
+            <div>
+              <input
+                type="number"
+                class="custom-input"
+                placeholder="ALTA SUMA"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Name, surname, email, phone, cause fields -->
+        <div class="section-container">
+          <div class="mb-3">
+            <label for="firstName">NUME</label>
+            <input
+              type="text"
+              name="nume"
+              class="form-control"
+              required
+              placeholder="Numele tau"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="surname">PRENUME</label>
+            <input
+              type="text"
+              name="surname"
+              class="form-control"
+              required
+              placeholder="Prenumele tau"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email">EMAIL</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              required
+              placeholder="nume@exemplu.ro"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="phone">TELEFON</label>
+            <input
+              type="tel"
+              name="phone"
+              class="form-control"
+              required
+              placeholder="0000-000-000"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="cauza">CAUZA</label>
+            <input
+              type="text"
+              name="cauza"
+              class="form-control"
+              required
+              placeholder="Specificati cauza"
+            />
+          </div>
+        </div>
+
+        <!-- Terms and conditions -->
+        <div class="section-container">
+          <div class="form-check mb-4">
+            <input type="checkbox" class="form-check-input" id="agreement" />
+            <label class="form-check-label" for="agreement"
+              >Sunt de acord cu termenii si conditiile.</label
+            >
+          </div>
+          <button type="submit" class="btn btn-primary" id="submitBtn" disabled>
+            Trimite Donatia
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="donatii.js"></script>
+  </body>
+</html>
