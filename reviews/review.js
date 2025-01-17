@@ -1,6 +1,7 @@
 const ratingContainer = document.getElementById("rating");
 let currentRating = 0;
 
+//dreate star element
 for (let i = 1; i <= 5; i++) {
   const star = document.createElement("span");
   star.classList.add("star");
@@ -9,19 +10,19 @@ for (let i = 1; i <= 5; i++) {
   ratingContainer.appendChild(star);
 }
 
-// Function to handle hover effect
+// handle hover effect
 function handleHover(rating) {
   const stars = document.querySelectorAll(".star");
   stars.forEach((star, index) => {
     if (index < rating) {
-      star.classList.add("hovered"); // Add hovered effect up to the hovered star
+      star.classList.add("hovered"); 
     } else {
       star.classList.remove("hovered");
     }
   });
 }
 
-// Function to set the rating (on click)
+// set the star rating
 function setRating(rating) {
   currentRating = rating;
   const stars = document.querySelectorAll(".star");
@@ -32,38 +33,39 @@ function setRating(rating) {
       star.classList.remove("selected");
     }
   });
-  enableSubmitButton(); // Enable the submit button when rating is set
+  enableSubmitButton(); 
 }
 
-// Function to enable or disable the submit button
+
 function enableSubmitButton() {
   const submitButton = document.getElementById("submitReview");
-  submitButton.disabled = currentRating === 0; // Disable if no rating is selected
+  submitButton.disabled = currentRating === 0; 
 }
 
-// Add event listeners to each star
+//parse the star index
 const stars = document.querySelectorAll(".star");
 stars.forEach((star) => {
   star.addEventListener("click", () => {
-    const rating = parseInt(star.dataset.index); // Get the rating from the clicked star
-    setRating(rating); // Set the selected rating
+    //get rating
+    const rating = parseInt(star.dataset.index); 
+    //set rating
+    setRating(rating); 
   });
 
-  // Event listener for hover effects
+//star actions
   star.addEventListener("mouseover", () => {
-    const rating = parseInt(star.dataset.index); // Get the rating of the hovered star
-    //console.log(star.dataset.index);
-    handleHover(rating); // Show hover effect
+    const rating = parseInt(star.dataset.index); 
+    handleHover(rating); 
   });
 
   star.addEventListener("mouseleave", () => {
-    handleHover(currentRating); // Reset hover effect but keep the selected stars
+    handleHover(currentRating); 
   });
 });
 
 const reviewForm = document.querySelector(".review-form");
 
-// Function to show the thank you message
+//show message
 function showThanksMessage() {
   var message = document.getElementById("snackbar");
   message.className = "show";
@@ -75,6 +77,8 @@ function showThanksMessage() {
 reviewForm.addEventListener("submit", function (event) {
   event.preventDefault();
   showThanksMessage();
+
+  //reset form
   reviewForm.reset();
   setRating(0);
   handleHover(currentRating);
